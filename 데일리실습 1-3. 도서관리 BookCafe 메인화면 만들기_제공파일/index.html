@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SSAFY BOOK CAFE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <style>
+      circle{
+        list-style-type: circle;
+      }
+    </style>
+  </head>
+  <body>
+  
+    <header>
+      <nav>
+        <a href="/bookcafe/">SSAFY BookCafe</a>
+        <a href="/announcements/">공지사항</a>
+        <br>
+        <a href="/login/">로그인</a>
+        <br>
+        <a href="/signin/">회원가입</a>
+        <br>
+        <a href="/logout/">로그아웃</a>
+        <br>
+        <a href="/mypage/">마이페이지</a>
+        <br>
+        <a href="/administrator/">관리자</a>
+      </nav>
+      <section>
+        <img
+          src="./img/noimg.png"
+          title="noimg"
+          width="100"
+          height="100"
+        />
+        <img
+          src="./img/profile.png"
+          title="profile"
+          width="100"
+          height="100"
+        />
+      </section>
+      <section>
+        전국매장펼치기
+        <br>
+        전국매장접기
+      </section>
+    </header>
+
+    <main>
+      <article>
+        <ul>
+          <li>서울</li>
+          <ul>
+            <li class="circle">역삼점</li>
+            <li class="circle">선릉점</li>
+          </ul>
+          <li>대전</li>
+          <ul>
+            <li class="circle">학하점</li>
+            <li class="circle">봉명점</li>
+          </ul>
+          <li>구미</li>
+          <ul>
+            <li class="circle">인동점</li>
+            <li class="circle">공단점</li>
+          </ul>
+          <li>광주</li>
+          <ul>
+            <li class="circle">하남산단점</li>
+            <li class="circle">광주역점</li>
+          </ul>
+        </ul>
+
+      </article>
+      
+      <article>
+        [당신의 선택]
+        <br>
+        공부하고 싶은 분야를 골라 주세요!!!
+        <ul style="margin:20px">
+          <li><input type="radio" name="language" value="python" /> 
+            <img
+            src="./img/poll/python.png"
+            title="coding_lang"
+            height="100"
+          /> <b>Python</b></li>
+          <li><input type="radio" name="language" value="html5" /> 
+            <img
+            src="./img/poll/html5.png"
+            title="coding_lang"
+            height="100"
+          /> <b>HTML5</b></li>
+          <li><input type="radio" name="language" value="vue.js"  /> 
+            <img
+            src="./img/poll/vuejs.png"
+            title="coding_lang"
+            height="100"
+          /><b> Vue.js</b></li>
+          <li><input type="radio" name="language" value="java"  /> 
+            <img
+            src="./img/poll/java.png"
+            title="coding_lang"
+            height="100"
+          /><b> Java</b></li>
+        </ul>
+        <button>투표하기</button>
+        <button>결과보기</button>
+        <br>
+        투표기간 : 21.03.01 ~ 21.03.31</button>
+      </article>
+
+      <article>
+        <section>
+          <h3>[ 프로그래밍 언어 ]</h3>
+          <ul>
+            <li><img src="./img/book/p_book01.png"
+            title="book"
+            height="110"/>
+            <br>Do it! 점프 투 파이썬 (18,800원)
+            </li>
+            <li><img src="./img/book/p_book02.png"
+            title="book"
+            height="110"/>
+            <br>HTML5 API 프로그래밍 (23,000원)
+            </li>
+            <li><img src="./img/book/p_book03.png"
+              title="book"
+              height="110"/>
+              <br>백견불여일타 (22,000원)
+            </li>
+            <li><img src="./img/book/p_book04.png"
+              title="book"
+              height="110"/>
+              <br>Java 프로그래밍 (26,500원)
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>[ 에세이 ]</h3>
+          <ul>
+            <li><img src="./img/book/e_book01.png"
+            title="book"
+            height="110"/>
+            <br>2인조 (14,800원)
+            </li>
+            <li><img src="./img/book/e_book02.png"
+            title="book"
+            height="110"/>
+            <br>안녕, 소중한 사람 (15,000원)
+            </li>
+            <li><img src="./img/book/e_book03.png"
+              title="book"
+              height="110"/>
+              <br>꽃을 보든 너를 본다 (10,000원)
+            </li>
+            <li><img src="./img/book/e_book04.png"
+              title="book"
+              height="110"/>
+              <br>곰돌이 푸, 행복한 일은 매일 있어 (12,000원)
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <article>
+        <section>
+          <h3>[ 인기글 ]</h3>
+          <table>
+            <tr>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>조회수</th>
+            </tr>
+            <tr>
+              <td>자바공부 쉽게하는법!!</td>
+              <td>이쎄림</td>
+              <td>1756</td>
+            </tr>
+            <tr>
+              <td>알고리즘은 자바? 파이썬?</td>
+              <td>홍정밍</td>
+              <td>998</td>
+            </tr>
+            <tr>
+              <td>스프링 정복하기~</td>
+              <td>김나켠</td>
+              <td>856</td>
+            </tr>
+          </table>
+        </section>
+
+        <section>
+          <h3>[ 최신글 ]</h3>
+          <table>
+            <tr>
+              <th>제목</th>
+              <th>작성자</th>
+              <th>조회수</th>
+            </tr>
+            <tr>
+              <td>web 관련 질문있어요</td>
+              <td>이주녕</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>vuejs는 이렇게 공부해보세요.</td>
+              <td>조밍기</td>
+              <td>998</td>
+            </tr>
+            <tr>
+              <td>꽃길만 걸어요.</td>
+              <td>류해면</td>
+              <td>856</td>
+            </tr>
+          </table>
+        </section>
+      </article>
+      
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="/description/">카페소개</a></li>
+          <li><a href="/contract/">개인정보처리방침</a></li>
+          <li><a href="/termsconditions/">이용약관</a></li>
+          <li><a href="/route/">오시는길</a></li>
+          <li>&copy; SSAFY Corp.</li>
+        </ul>
+      </nav>
+    </footer>
+
+  </body>
+</html>
