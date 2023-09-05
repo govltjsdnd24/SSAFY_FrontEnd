@@ -48,3 +48,31 @@ function allSlide(command) {
 function pollMake() {
     window.open("./pollmake.html", "winname", "width=420, height=280");
 }
+var counter = 1;
+function addAnswer() {
+    let answer = document.createElement("div");
+    answer.setAttribute("class", "poll_answer_item");
+    answer.setAttribute("id", counter);
+    let txt = document.createElement("input");
+    txt.setAttribute("type", "text");
+    txt.setAttribute("name", "answer");
+    answer.appendChild(txt);
+    let btn = document.createElement("button");
+    
+    btn.setAttribute("type", "button");
+    btn.setAttribute("onclick", `removeElement(${counter})`);
+    
+    btn.innerText = "삭제";
+    //btn.addEventListener('click', removeElement(counter));
+    answer.appendChild(btn);
+
+    document.getElementById("poll_answer_list").appendChild(answer);
+    counter++;
+}
+
+function removeElement(index) { 
+    console.log(index);
+    let el = document.getElementById(index);
+    document.getElementById("poll_answer_list").removeChild(el);
+    // counter--;
+}
