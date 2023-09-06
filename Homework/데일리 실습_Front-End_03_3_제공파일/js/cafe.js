@@ -55,13 +55,13 @@ function login() {
     }
     alert("로그인 성공");
     document.getElementById("header_nav_confirm_off").style.display = 'none';
-    document.getElementById("header_nav_confirm_on").style.display = 'inline';
+    document.getElementById("header_nav_confirm_on").style.display = 'flex';
     document.getElementById("profile_img").src='img/profile.png';
 
 }
 
 function logout() {
-    document.getElementById("header_nav_confirm_off").style.display = 'inline';
+    document.getElementById("header_nav_confirm_off").style.display = 'flex';
     document.getElementById("header_nav_confirm_on").style.display = 'none';
     document.getElementById("profile_img").src='img/noimg.png';
 }
@@ -75,18 +75,18 @@ function slideDown(region) {
 }
 
 function allSlide(command) {
-    var docs = document.getElementsByClassName("store_item_sub");
+    //var docs = document.getElementsByClassName("store_item_sub");
+    var docs = document.getElementsByClassName("accordion-collapse collapse");
     if (command == 'on') {
         for (var doc of docs) {
-            document.getElementById(doc.getAttribute('id')).style.display = 'block';
+            doc.classList.add("show")
         }
         document.getElementsByClassName("store_display_on")[0].style.display = 'none';
         document.getElementsByClassName("store_display_off")[0].style.display = 'block';
     }
     else if (command == 'off') {
-        console.log("here");
         for (var doc of docs) {
-            document.getElementById(doc.getAttribute('id')).style.display = 'none';
+            doc.classList.remove("show");
         }
         document.getElementsByClassName("store_display_on")[0].style.display = 'block';
         document.getElementsByClassName("store_display_off")[0].style.display = 'none';
@@ -100,10 +100,11 @@ function pollMake() {
 var counter = 1;
 function addAnswer() {
     let answer = document.createElement("div");
-    answer.setAttribute("class", "poll_answer_item");
+    answer.setAttribute("class", "col-md-10");
     answer.setAttribute("id", counter);
     let txt = document.createElement("input");
     txt.setAttribute("type", "text");
+    txt.setAttribute("class", "form-inline mb-1");
     txt.setAttribute("name", "answer");
     answer.appendChild(txt);
     let btn = document.createElement("button");
@@ -114,29 +115,30 @@ function addAnswer() {
     btn.innerText = "삭제";
     //btn.addEventListener('click', removeElement(counter));
     answer.appendChild(btn);
+    
 
-    document.getElementById("poll_answer_list").appendChild(answer);
+    document.getElementById("poll-answer-list").appendChild(answer);
     counter++;
 }
 
 function removeElement(index) { 
     console.log(index);
     let el = document.getElementById(index);
-    document.getElementById("poll_answer_list").removeChild(el);
+    document.getElementById("poll-answer-list").removeChild(el);
     // counter--;
 }
 
 function makePoll() {
-    let sdate = document.querySelector("#start_date").value;
+    let sdate = document.querySelector("#start-date").value;
     let start_date = sdate.substring(2, 4) + "." + sdate.substring(5, 7) + "." + sdate.substring(8, 10);
-    let edate = document.querySelector("#end_date").value;
+    let edate = document.querySelector("#end-date").value;
     let end_date = edate.substring(2, 4) + "." + edate.substring(5, 7) + "." + edate.substring(8, 10);
     
-    if (!start_date) {
+    if (start_date=='..' || !start_date) {
         alert("시작일자는 필수!!!");
         return;
     }
-    else if (!end_date) {
+    else if (end_date='..' || !end_date) {
         alert("종료일자는 필수!!!");
         return;
     }
@@ -170,8 +172,8 @@ function makePoll() {
 
     if (confirm("투표를 생성하시겠습니까?")) {
         localStorage.setItem("poll", JSON.stringify(poll));
-        opener.location.reload();
-        self.close();
+        location.reload();
+        // self.close();
     }
 }
 
